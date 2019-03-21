@@ -1,9 +1,11 @@
-package com.app.whatsapp.whatsapp;
+package com.app.whatsapp.whatsapp.activity;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+
+import com.app.whatsapp.whatsapp.R;
 
 public class LoginActivity extends AppCompatActivity {
 
