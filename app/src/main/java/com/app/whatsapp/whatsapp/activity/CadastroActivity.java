@@ -69,7 +69,7 @@ public class CadastroActivity extends AppCompatActivity {
         String textoEmail = campoEmail.getText().toString();
         String textoSenha = campoSenha.getText().toString();
 
-        if (!textoNome.isEmpty() || textoEmail.isEmpty() || textoSenha.isEmpty()){
+        if (!textoNome.isEmpty() || !textoEmail.isEmpty() || !textoSenha.isEmpty()){
             Usuario usuario = new Usuario();
             usuario.setNome(textoNome);
             usuario.setEmail(textoEmail);
