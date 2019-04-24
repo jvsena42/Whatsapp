@@ -9,6 +9,7 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        android.defaultConfig.vectorDrawables.useSupportLibrary = true
     }
     buildTypes {
         release {
@@ -35,5 +36,8 @@ dependencies {
     //Dependencias para as abas
     implementation 'com.ogaclejapan.smarttablayout:library:1.6.1@aar'
     implementation 'com.ogaclejapan.smarttablayout:utils-v4:1.6.1@aar'
+
+    //Circle image
+    implementation 'de.hdodenhof:circleimageview:3.0.0'
 }
 apply plugin: 'com.google.gms.google-services'

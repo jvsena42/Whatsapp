@@ -9,6 +9,7 @@ import android.widget.Toast;
 
 import com.app.whatsapp.whatsapp.R;
 import com.app.whatsapp.whatsapp.config.ConfiguracaoFirebase;
+import com.app.whatsapp.whatsapp.helper.Base64Custom;
 import com.app.whatsapp.whatsapp.model.Usuario;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -34,7 +35,7 @@ public class CadastroActivity extends AppCompatActivity {
         campoSenha = findViewById(R.id.editSenha);
     }
 
-    public void cadastrarUsuario(Usuario usuario){
+    public void cadastrarUsuario(final Usuario usuario){
         autentiacao = ConfiguracaoFirebase.getFirebaseAuth();
         autentiacao.createUserWithEmailAndPassword(
             usuario.getEmail(),usuario.getSenha()
@@ -43,6 +44,15 @@ public class CadastroActivity extends AppCompatActivity {
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()){
                     finish();
+
+                    try{
+                        String indentificadorUsuario = Base64Custom.codificarBase64(usuario.getEmail());
+                        usuario.setId(indentificadorUsuario);
+                        usuario.salvar();
+                    }catch (Exception e){
+                       e.printStackTrace();
+                    }
+
                 }else {
                     String excessao = "";
                     try {
