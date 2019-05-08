@@ -4,11 +4,10 @@
 
     <uses-feature
         android:name="android.hardware.camera2"
-        android:required="true"
-        />
+        android:required="true" />
 
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:allowBackup="true"
@@ -26,10 +25,9 @@
         </activity>
         <activity android:name=".activity.CadastroActivity" />
         <activity android:name=".activity.MainActivity" />
-        <activity android:name=".activity.ConfiguracoesActivity"
-            android:parentActivityName=".activity.MainActivity">
-
-        </activity>
+        <activity
+            android:name=".activity.ConfiguracoesActivity"
+            android:parentActivityName=".activity.MainActivity"></activity>
     </application>
 
 </manifest>
