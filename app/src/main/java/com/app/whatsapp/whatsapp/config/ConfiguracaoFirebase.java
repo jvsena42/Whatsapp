@@ -31,9 +31,11 @@ public class ConfiguracaoFirebase {
 
     //Retorna instancia do firebaseStorage
     public static StorageReference getFirebaseStorage(){
-        if (storage == null){
+        if( storage == null ){
             storage = FirebaseStorage.getInstance().getReference();
         }
         return storage;
     }
+
+
 }
